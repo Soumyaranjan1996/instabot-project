@@ -53,20 +53,20 @@ console.log("Before");
                 })
                 return wordList; 
             });
-            await console.log(words[0]);
+            //await console.log(words[0]);
             newList.push(words[0]);
             await page.waitFor(3000);
             //Go to next post
             await waitAndClick('a.coreSpriteRightPaginationArrow', page);
         }
-        console.log(newList);
+        //console.log(newList);
         
         let linkList = [];
         for(let j = 0; j < 5;j++){
             let fullLink = `https://www.instagram.com/${newList[j]}`;
             linkList.push(fullLink);
         }
-        console.log(linkList);
+        //console.log(linkList);
         
         for(let k = 0;k < 5;k++){
         await getDataFromNewTab(linkList[k], browser, newList[k]);
@@ -111,10 +111,10 @@ async function getDataFromNewTab(link, browser,name) {
         })
         return followerList; 
     });
-    await console.log(followers);
-    console.log(name);
-    console.log(followers[1],"followers");
-    console.log(followers[2],"following");
+    //await console.log(followers);
+    //console.log(name);
+    //console.log(followers[1],"followers");
+    //console.log(followers[2],"following");
     FinalArr.push({"Name":name,"Profile Link":link , "Followers":followers[1], "Following":followers[2]});
     //await newPage.close(); 
 }
